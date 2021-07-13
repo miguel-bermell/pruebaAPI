@@ -8,6 +8,7 @@ const logger = require("morgan");
 
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
+const servicesRouter = require("./routes/services");
 
 const loadModels = require("./models/relationship");
 const errorHandler = require("./middlewares/errorHandler");
@@ -20,10 +21,10 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+app.use("/services", servicesRouter);
 
 app.use(errorHandler);
 module.exports = app;
