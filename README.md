@@ -50,3 +50,24 @@ Proyecto realizado para una prueba técnica. Consiste en que un usuario pueda ag
 ```http
   POST /services
 ```
+
+### Dependencias
+
+Librearías que se han utilizado en este proyecto son las siguientes:
+
+* [express]
+* [dotenv]
+* [mysql2]
+* [cors]
+* [sequelize]
+* [joi]
+* [morgan]
+
+# Iniciar el proyecto
+* Modificar el archivo .env y añadir tus credenciales
+
+* npm
+  ```sh
+  npm install
+  npm run start
+  ```
