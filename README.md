@@ -71,3 +71,9 @@ Librearías que se han utilizado en este proyecto son las siguientes:
   npm install
   npm run start
   ```
+  
+  * OPCIONAL Para cargar datos en la Base de datos
+  ```sh
+  npm run seed:units
+  npm run seed:services
+  ```
