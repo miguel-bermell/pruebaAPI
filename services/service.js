@@ -1,6 +1,8 @@
+const { bulkCreate } = require("../models/Service");
 const serviceRepository = require("../repositories/service");
 const { ERRORS } = require("../utils/constants");
 const HttpError = require("../utils/httpError");
+const Service = require("../models/Service");
 
 exports.getAllServices = async () => {
   return await serviceRepository.findAllServices();
@@ -17,8 +19,10 @@ exports.getServiceById = async (id) => {
   return service.toJSON();
 };
 
-exports.createService = async (service) => {
-  if (!service) throw new HttpError(400, ERRORS.NO_SERVICE);
+exports.createService = async ({ services }) => {
+  if (!services) throw new HttpError(400, ERRORS.NO_SERVICE);
 
-  return await serviceRepository.insertService(service);
+  Service.bulkCreate(services, { returning: true }).then((result) => {
+    console.log(result);
+  });
 };

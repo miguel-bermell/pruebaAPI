@@ -18,6 +18,7 @@ const Service = dbConnection.define("service", {
   },
   unitId: {
     type: DataTypes.TINYINT(),
+    defaultValue: 2,
   },
 });
 
