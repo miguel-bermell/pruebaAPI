@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node ./bin/www",
     "start:dev": "nodemon ./bind/www",
-    "seed:units": "node ./utils/unitsSeed.js"
+    "seed:units": "node ./utils/unitsSeed.js",
+    "seed:services": "node ./utils/servicesSeed.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",

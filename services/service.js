@@ -1,4 +1,3 @@
-const { bulkCreate } = require("../models/Service");
 const serviceRepository = require("../repositories/service");
 const { ERRORS } = require("../utils/constants");
 const HttpError = require("../utils/httpError");
