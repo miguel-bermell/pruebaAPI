@@ -34,4 +34,4 @@ const services = [
   },
 ];
 
-Unit.bulkCreate(services).then(() => console.log("¡Services loaded!"));
+Service.bulkCreate(services).then(() => console.log("¡Services loaded!"));
