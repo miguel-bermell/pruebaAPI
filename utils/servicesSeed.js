@@ -18,7 +18,7 @@ const services = [
     unitId: 2,
   },
   {
-    title: "Instalación electrica",
+    title: "Instalación eléctrica",
     price: 520,
     unitId: 2,
   },
