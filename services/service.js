@@ -2,6 +2,7 @@ const serviceRepository = require("../repositories/service");
 const { ERRORS } = require("../utils/constants");
 const HttpError = require("../utils/httpError");
 const Service = require("../models/Service");
+const { insertServiceSchema } = require("../validations/serviceValidation");
 
 exports.getAllServices = async () => {
   return await serviceRepository.findAllServices();
@@ -21,7 +22,11 @@ exports.getServiceById = async (id) => {
 exports.createService = async ({ services }) => {
   if (!services) throw new HttpError(400, ERRORS.NO_SERVICE);
 
-  Service.bulkCreate(services, { returning: true }).then((result) => {
-    console.log(result);
-  });
+  const validationData = insertServiceSchema.validate(services);
+
+  Service.bulkCreate(validationData.value, { returning: true }).then(
+    (result) => {
+      console.log(result);
+    }
+  );
 };
